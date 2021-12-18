@@ -79,6 +79,45 @@ const GetDataFromApi = () => {
         getUsers();
       });
   };
+  const findMaxId = () => {
+    const ids = Data.map((user) => user.id);
+    const max = Math.max(ids);
+    return max + 1;
+  };
+  const addNewUser = async (arg) => {
+    console.log("lenght", Number(Data.length - 1), arg);
+    const Id = findMaxId();
+    const newUserData = {
+      id: Id,
+      name: arg.name,
+      username: arg.userName,
+      email: arg.email,
+      phone: arg.phone,
+      website: arg.website,
+      company: {
+        bs: arg.companyBs,
+        catchPhrase: arg.companyCatch,
+        name: arg.companyName,
+      },
+      address: {
+        city: arg.addressCity,
+        geo: {
+          lat: arg.addressGeoLat,
+          lng: arg.addressGeoLng,
+        },
+        street: arg.addressStreet,
+        suite: arg.addressSuite,
+        zipcode: arg.addressZip,
+      },
+    };
+    console.log("neww", newUserData);
+    await axios
+      .post("http://localhost:3001/test", newUserData)
+      .then((res) => {
+        console.log("post res", res);
+      })
+      .catch((err) => console.log(err));
+  };
 
   const getUserById = (id) => {
     console.log("id", id);
@@ -88,7 +127,7 @@ const GetDataFromApi = () => {
     return userDetails;
   };
 
-  return { Data, getUsers, deleteUser, editData, getUserById };
+  return { Data, getUsers, deleteUser, editData, getUserById, addNewUser };
 };
 
 export default GetDataFromApi;
