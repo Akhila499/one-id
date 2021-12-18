@@ -2,11 +2,12 @@ import React from "react";
 import "./user.css";
 import { Link } from "react-router-dom";
 import GetDataFromApi from "../api/GetDataFromApi";
+import EditUser from "./EditUser";
 
 const User = (props) => {
   const { deleteUser, editData } = GetDataFromApi();
 
-  const { user } = props;
+  const { user } = props ? props : "";
 
   console.log("user$$$", props);
   return (
@@ -27,10 +28,15 @@ const User = (props) => {
           <li>{user.address.suite}</li>
           <li>{user.address.zipcode}</li>
         </ul>
-        <Link to={`/users/${user.id}`}>edit</Link>
-        <button type="submit" onClick={() => editData(user.id)}>
-          Edit
-        </button>
+        {/* <Link to={`/users/${user.id}`}>edit</Link> */}
+        <Link
+          to={{
+            pathname: `/users/${user.id}`,
+          }}
+        >
+          edit
+        </Link>
+
         <button type="submit" onClick={() => deleteUser(user.id)}>
           Delete
         </button>

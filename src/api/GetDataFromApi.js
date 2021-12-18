@@ -4,14 +4,14 @@ import { useState, useEffect } from "react";
 
 const GetDataFromApi = () => {
   const [Data, setData] = useState([]);
-
+  const [Details, setDetails] = useState([]);
   console.log("data111", Data); //2
   useEffect(() => {
     getUsers();
   }, []);
   const url = `http://localhost:3001/test`;
-  const getUsers = async () => {
-    await axios
+  const getUsers = () => {
+    axios
       .get(url)
       .then((res) => {
         console.log("res@@@", res.data);
@@ -42,25 +42,53 @@ const GetDataFromApi = () => {
       });
   };
 
-  const editData = (id) => {
-    let editUrl = `https://jsonplaceholder.typicode.com/users/${id}`;
-    fetch(editUrl, {
-      method: "PUT",
-      body: JSON.stringify({
-        id: id,
-        name: "foo",
-        username: "bar",
-        userId: id,
-      }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    })
-      .then((response) => response.json())
-      .then((json) => console.log(json));
+  const editData = async (arg) => {
+    console.log("arg", arg, arg.id);
+    const id = arg.id;
+    const editUrl = `http://localhost:3001/test/${id}`;
+    await axios
+      .put(editUrl, {
+        id: arg.id,
+        name: arg.Name,
+        username: arg.UserName,
+        email: arg.email,
+        phone: arg.phone,
+        website: arg.website,
+        company: {
+          bs: arg.companyBs,
+          catchPhrase: arg.companyCatch,
+          name: arg.companyName,
+        },
+        address: {
+          city: arg.addressCity,
+          geo: {
+            lat: arg.addressGeoLat,
+            lng: arg.addressGeoLng,
+          },
+          street: arg.addressStreet,
+          suite: arg.addressSuite,
+          zipcode: arg.addressZip,
+        },
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+      .then((json) => {
+        console.log(json);
+
+        getUsers();
+      });
   };
 
-  return { Data, getUsers, deleteUser, editData };
+  const getUserById = (id) => {
+    console.log("id", id);
+    const userDetails = Data.filter((user) => user.id === Number(id));
+    // setDetails(userDetails);
+    console.log("im herreee", userDetails[0]);
+    return userDetails;
+  };
+
+  return { Data, getUsers, deleteUser, editData, getUserById };
 };
 
 export default GetDataFromApi;

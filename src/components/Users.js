@@ -1,6 +1,7 @@
 import React from "react";
 import User from "./User";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Users = (props) => {
   const { data } = props;
@@ -12,7 +13,14 @@ const Users = (props) => {
   });
   return (
     <>
-      <button type="submit">Add new user</button>
+      {/* <button type="submit">Add new user</button> */}
+      <Link
+        to={{
+          pathname: `/users/new`,
+        }}
+      >
+        add new user
+      </Link>
       {user}
     </>
   );
