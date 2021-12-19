@@ -4,15 +4,14 @@ import { useState, useEffect } from "react";
 
 const GetDataFromApi = () => {
   const [Data, setData] = useState([]);
-  const [Details, setDetails] = useState([]);
-  console.log("data111", Data); //2
+
   useEffect(() => {
     getUsers();
   }, []);
-  const url = `http://localhost:3001/test`;
+
   const getUsers = () => {
     axios
-      .get(url)
+      .get(`http://localhost:3001/test`)
       .then((res) => {
         console.log("res@@@", res.data);
 
@@ -43,7 +42,6 @@ const GetDataFromApi = () => {
   };
 
   const editData = async (arg) => {
-    console.log("arg", arg, arg.id);
     const id = arg.id;
     const editUrl = `http://localhost:3001/test/${id}`;
     await axios
@@ -79,11 +77,13 @@ const GetDataFromApi = () => {
         getUsers();
       });
   };
+
   const findMaxId = () => {
     const ids = Data.map((user) => user.id);
     const max = Math.max(ids);
     return max + 1;
   };
+
   const addNewUser = async (arg) => {
     console.log("lenght", Number(Data.length - 1), arg);
     const Id = findMaxId();
@@ -120,10 +120,7 @@ const GetDataFromApi = () => {
   };
 
   const getUserById = (id) => {
-    console.log("id", id);
     const userDetails = Data.filter((user) => user.id === Number(id));
-    // setDetails(userDetails);
-    console.log("im herreee", userDetails[0]);
     return userDetails;
   };
 

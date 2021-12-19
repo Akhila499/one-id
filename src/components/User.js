@@ -2,10 +2,9 @@ import React from "react";
 import "./user.scss";
 import { Link } from "react-router-dom";
 import GetDataFromApi from "../api/GetDataFromApi";
-import EditUser from "./EditUser";
 
 const User = (props) => {
-  const { deleteUser, editData } = GetDataFromApi();
+  const { deleteUser } = GetDataFromApi();
 
   const { user } = props ? props : "";
 
@@ -58,7 +57,6 @@ const User = (props) => {
           <li className="space">{user.address.suite}</li>
           <li className="space">{user.address.zipcode}</li>
         </ul>
-        {/* <Link to={`/users/${user.id}`}>edit</Link> */}
 
         <div className="bottom">
           <button

@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
-    "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.24.0",
     "node-sass": "^7.0.0",
@@ -17,9 +16,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "api": "json-server db.json --routes routes.json --no-cors=false"
+    "api": "json-server db.json --routes routes.json --no-cors=false",
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": [
@@ -38,5 +37,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@testing-library/react": "^12.1.2",
+    "jest": "^27.4.5",
+    "jest-dom": "^4.0.0",
+    "react-test-renderer": "^17.0.2"
   }
 }
