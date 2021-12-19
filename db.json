@@ -2,25 +2,28 @@
   "test": [
     {
       "id": 3,
-      "name": "Clementine Bauch",
+      "name": "Clementine Bauch Akhila",
       "username": "Samantha",
       "email": "Nathan@yesenia.net",
-      "address": {
-        "street": "Douglas Extension",
-        "suite": "Suite 847",
-        "city": "McKenziehaven",
-        "zipcode": "59590-4157",
-        "geo": {
-          "lat": "-68.6102",
-          "lng": "-47.0653"
-        }
-      },
       "phone": "1-463-123-4447",
       "website": "ramiro.info",
       "company": {
-        "name": "Romaguera-Jacobson",
+        "bs": "e-enable strategic applications",
         "catchPhrase": "Face to face bifurcated interface",
-        "bs": "e-enable strategic applications"
+        "name": "Romaguera-Jacobson"
+      },
+      "address": {
+        "city": "McKenziehaven",
+        "geo": {
+          "lat": "-68.6102",
+          "lng": "-47.0653"
+        },
+        "street": "Douglas Extension",
+        "suite": "Suite 847",
+        "zipcode": "59590-4157"
+      },
+      "headers": {
+        "Content-type": "application/json; charset=UTF-8"
       }
     },
     {
