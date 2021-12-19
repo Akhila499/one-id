@@ -1,4 +1,5 @@
 import "./App.css";
+
 import GetDataFromApi from "./api/GetDataFromApi";
 import Users from "./components/Users";
 import { Route, Routes } from "react-router-dom";

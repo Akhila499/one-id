@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import "../src/components/users.scss";
+import "../src/components/user.scss";
+import "../src/components/adduser.scss";
+import "../src/components/edituser.scss";
+
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";

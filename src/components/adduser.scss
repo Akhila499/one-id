@@ -1,0 +1,21 @@
+.adduser-block {
+  padding: 4vw;
+  text-align: center;
+
+  .input-css {
+    display: block;
+    font-family: "Open Sans";
+    padding: 1em 0.5em;
+    border: 1px solid #dedbdb;
+    width: 94%;
+    margin: 1em;
+  }
+  .Submit {
+    font-family: "Open Sans";
+    font-size: 1em;
+    padding: 0.5em 1em;
+    border: none;
+    background-color: #5e72ae;
+    color: #fff;
+  }
+}

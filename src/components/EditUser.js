@@ -63,95 +63,128 @@ const EditUser = (props) => {
 
   return (
     <>
-      {details[0] && (
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={Name}
-            placeholder={details[0].name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <input
-            type="text"
-            value={UserName}
-            placeholder={details[0].username}
-            onChange={(e) => setUserName(e.target.value)}
-          />
-          <input
-            type="text"
-            value={email}
-            placeholder={details[0].email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="text"
-            value={phone}
-            placeholder={details[0].phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
-          <input
-            type="text"
-            value={website}
-            placeholder={details[0].website}
-            onChange={(e) => setWebsite(e.target.value)}
-          />
-          <input
-            type="text"
-            value={companyBs}
-            placeholder={details[0].company.bs}
-            onChange={(e) => setCompanyBs(e.target.value)}
-          />
-          <input
-            type="text"
-            value={companyCatch}
-            placeholder={details[0].company.catchPhrase}
-            onChange={(e) => setCompanyCatch(e.target.value)}
-          />
-          <input
-            type="text"
-            value={companyName}
-            placeholder={details[0].company.name}
-            onChange={(e) => setCompanyName(e.target.value)}
-          />
-          <input
-            type="text"
-            value={addressCity}
-            placeholder={details[0].address.city}
-            onChange={(e) => setAddressCity(e.target.value)}
-          />
-          <input
-            type="text"
-            value={addressGeoLat}
-            placeholder={details[0].address.geo.lat}
-            onChange={(e) => setAddressGeoLat(e.target.value)}
-          />
-          <input
-            type="text"
-            value={addressGeoLng}
-            placeholder={details[0].address.geo.lng}
-            onChange={(e) => setAddressGeoLng(e.target.value)}
-          />
-          <input
-            type="text"
-            value={addressStreet}
-            placeholder={details[0].address.street}
-            onChange={(e) => setAddressStreet(e.target.value)}
-          />
-          <input
-            type="text"
-            value={addressSuite}
-            placeholder={details[0].address.suite}
-            onChange={(e) => setAddressSuite(e.target.value)}
-          />
-          <input
-            type="text"
-            value={addressZip}
-            placeholder={details[0].address.zipcode}
-            onChange={(e) => setAddressZip(e.target.value)}
-          />
-          <button type="submit">Submit</button>
-        </form>
-      )}
+      <div className="editblock">
+        <h4>Edit User Details</h4>
+        {details[0] && (
+          <form onSubmit={handleSubmit}>
+            <input
+              className="input-css"
+              required
+              type="text"
+              value={Name}
+              placeholder={details[0].name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <input
+              className="input-css"
+              required
+              type="text"
+              value={UserName}
+              placeholder={details[0].username}
+              onChange={(e) => setUserName(e.target.value)}
+            />
+            <input
+              className="input-css"
+              required
+              type="text"
+              value={email}
+              placeholder={details[0].email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <input
+              className="input-css"
+              required
+              type="text"
+              value={phone}
+              placeholder={details[0].phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+            <input
+              className="input-css"
+              required
+              type="text"
+              value={website}
+              placeholder={details[0].website}
+              onChange={(e) => setWebsite(e.target.value)}
+            />
+            <input
+              className="input-css"
+              required
+              type="text"
+              value={companyBs}
+              placeholder={details[0].company.bs}
+              onChange={(e) => setCompanyBs(e.target.value)}
+            />
+            <input
+              className="input-css"
+              required
+              type="text"
+              value={companyCatch}
+              placeholder={details[0].company.catchPhrase}
+              onChange={(e) => setCompanyCatch(e.target.value)}
+            />
+            <input
+              className="input-css"
+              required
+              type="text"
+              value={companyName}
+              placeholder={details[0].company.name}
+              onChange={(e) => setCompanyName(e.target.value)}
+            />
+            <input
+              className="input-css"
+              required
+              type="text"
+              value={addressCity}
+              placeholder={details[0].address.city}
+              onChange={(e) => setAddressCity(e.target.value)}
+            />
+            <input
+              className="input-css"
+              required
+              type="text"
+              value={addressGeoLat}
+              placeholder={details[0].address.geo.lat}
+              onChange={(e) => setAddressGeoLat(e.target.value)}
+            />
+            <input
+              className="input-css"
+              required
+              type="text"
+              value={addressGeoLng}
+              placeholder={details[0].address.geo.lng}
+              onChange={(e) => setAddressGeoLng(e.target.value)}
+            />
+            <input
+              className="input-css"
+              required
+              type="text"
+              value={addressStreet}
+              placeholder={details[0].address.street}
+              onChange={(e) => setAddressStreet(e.target.value)}
+            />
+            <input
+              className="input-css"
+              required
+              type="text"
+              value={addressSuite}
+              placeholder={details[0].address.suite}
+              onChange={(e) => setAddressSuite(e.target.value)}
+            />
+            <input
+              className="input-css"
+              required
+              type="text"
+              value={addressZip}
+              placeholder={details[0].address.zipcode}
+              onChange={(e) => setAddressZip(e.target.value)}
+            />
+            <button type="submit" className="Submit">
+              Submit
+            </button>
+          </form>
+        )}
+      </div>
     </>
   );
 };

@@ -45,93 +45,126 @@ const AddUser = () => {
   };
   return (
     <>
-      <form onSubmit={formSubmit}>
-        <input
-          type="text"
-          value={name}
-          placeholder="Your Name"
-          onChange={(e) => setName(e.target.value)}
-        />
-        <input
-          type="text"
-          value={userName}
-          placeholder="User Name"
-          onChange={(e) => setUserName(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Phone"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="website"
-          value={website}
-          onChange={(e) => setWebsite(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Company Bs"
-          value={companyBs}
-          onChange={(e) => setCompanyBs(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Company catch"
-          value={companyCatch}
-          onChange={(e) => setCompanyCatch(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder=" Company Name"
-          value={companyName}
-          onChange={(e) => setCompanyName(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Address City"
-          value={addressCity}
-          onChange={(e) => setAddressCity(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Address-Geo-Latitude"
-          value={addressGeoLat}
-          onChange={(e) => setAddressGeoLat(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Address-Geo-Longitude"
-          value={addressGeoLng}
-          onChange={(e) => setAddressGeoLng(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Address Street"
-          value={addressStreet}
-          onChange={(e) => setAddressStreet(e.target.value)}
-        />
-        <input
-          type="text"
-          value={addressSuite}
-          placeholder="Address Suite"
-          onChange={(e) => setAddressSuite(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Address Zip"
-          value={addressZip}
-          onChange={(e) => setAddressZip(e.target.value)}
-        />
-        <button type="submit">Submit</button>
-      </form>
+      <div className="adduser-block">
+        <h4>Add New User</h4>
+        <form onSubmit={formSubmit}>
+          <input
+            type="text"
+            value={name}
+            placeholder="Your Name"
+            required
+            className="input-css"
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            type="text"
+            value={userName}
+            placeholder="User Name"
+            className="input-css"
+            required
+            onChange={(e) => setUserName(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="email"
+            value={email}
+            className="input-css"
+            required
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Phone"
+            value={phone}
+            className="input-css"
+            required
+            onChange={(e) => setPhone(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="website"
+            value={website}
+            className="input-css"
+            required
+            onChange={(e) => setWebsite(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Company Bs"
+            value={companyBs}
+            className="input-css"
+            required
+            onChange={(e) => setCompanyBs(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Company catch"
+            value={companyCatch}
+            className="input-css"
+            required
+            onChange={(e) => setCompanyCatch(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder=" Company Name"
+            value={companyName}
+            className="input-css"
+            required
+            onChange={(e) => setCompanyName(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Address City"
+            value={addressCity}
+            className="input-css"
+            required
+            onChange={(e) => setAddressCity(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Address-Geo-Latitude"
+            value={addressGeoLat}
+            className="input-css"
+            required
+            onChange={(e) => setAddressGeoLat(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Address-Geo-Longitude"
+            value={addressGeoLng}
+            className="input-css"
+            required
+            onChange={(e) => setAddressGeoLng(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Address Street"
+            value={addressStreet}
+            className="input-css"
+            required
+            onChange={(e) => setAddressStreet(e.target.value)}
+          />
+          <input
+            type="text"
+            value={addressSuite}
+            placeholder="Address Suite"
+            className="input-css"
+            required
+            onChange={(e) => setAddressSuite(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Address Zip"
+            value={addressZip}
+            className="input-css"
+            required
+            onChange={(e) => setAddressZip(e.target.value)}
+          />
+          <button type="submit" className="Submit">
+            Submit
+          </button>
+        </form>
+      </div>
     </>
   );
 };

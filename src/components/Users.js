@@ -13,15 +13,16 @@ const Users = (props) => {
   });
   return (
     <>
-      {/* <button type="submit">Add new user</button> */}
-      <Link
-        to={{
-          pathname: `/users/new`,
-        }}
-      >
-        add new user
-      </Link>
-      {user}
+      <div className="usersblock">
+        <Link
+          to={{
+            pathname: `/users/new`,
+          }}
+        >
+          <i className="fas fa-user-plus"></i>
+        </Link>
+        {user}
+      </div>
     </>
   );
 };
